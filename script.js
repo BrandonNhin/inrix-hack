@@ -2,7 +2,7 @@ async function start() {
     const response = await fetch("https://api.iq.inrix.com/auth/v1/appToken?appId=bk5opnzi3d&hashToken=Yms1b3BuemkzZHxGU2xCcG43em9sMkpUMnFHMlRoYms2S3FtSGVJWGV0YjIxVWNScGU1")
     const data = await response.json()
     const token = data.result.token
-        // Constructing the URL to INRIX Parking Blocks
+        // Constructing the URL to INRIX Speed Segments
     const speedSegmentsURL =
         "https://api.iq.inrix.com/v1/segments/speed?box=37.757386%7C-122.490667%2C37.746138%7C-122.395481";
 
@@ -15,7 +15,7 @@ async function start() {
         },
     };
 
-    // Executing a call using axios to get the INRIX Parking Blocks data
+    // Executing a call using axios to get the INRIX Speed Segments data
     const speedSegmentsResponse = await axios
         .get(speedSegmentsURL, axiosConfig)
         .then((response) => {
